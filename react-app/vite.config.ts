@@ -7,9 +7,14 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: "src/spa.tsx",
+      preserveEntrySignatures: "exports-only",
+      output: {
+        exports: "auto",
+        format: "amd",
+        entryFileNames: "bundle.js",
+      },
     },
   },
-  base: "http://localhost:5173/",
   plugins: [react(), vitePluginSingleSpa({ type: "root" })],
   server: {
     hmr: false,

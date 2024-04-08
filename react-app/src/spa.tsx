@@ -4,9 +4,13 @@ import singleSpaReact from "single-spa-react";
 import App from "./App";
 
 export const lifecycles = singleSpaReact({
+  parcelCanUpdate: true,
   React,
   ReactDOMClient,
-  rootComponent: App,
+  loadRootComponent: (opts) => {
+    console.log("opts", opts);
+    return Promise.resolve(App);
+  },
   errorBoundary(err, info, props) {
     // https://reactjs.org/docs/error-boundaries.html
     console.log({
