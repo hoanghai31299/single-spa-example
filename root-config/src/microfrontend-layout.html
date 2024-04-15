@@ -20,23 +20,33 @@
   <main>
     <div class="navbar">
       <ul>
-        <a onclick="singleSpaNavigate('/react')">
+        <a onclick="singleSpaNavigate('/')">
           <li>
-            React
+            Home
           </li>
         </a>
-        <a onclick="singleSpaNavigate('/angular')">
+        <a onclick="singleSpaNavigate('/dashboard')">
           <li>
-            Angular
+            Angular Dashboard
+          </li>
+        </a>
+        <a onclick="singleSpaNavigate('/contact')">
+          <li>
+            React contact
+          </li>
+        </a>
+        <a onclick="singleSpaNavigate('/about')">
+          <li>
+            React about
           </li>
         </a>
       </ul>
     </div>
-    <route path="/react">
+    <route path="/">
       <application name="react-app"></application>
     </route>
-    <route path="/angular">
-      <application name="angular-conduit"></application>
+    <route path="/">
+      <application name="angular-heroes"></application>
     </route>
   </main>
 

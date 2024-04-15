@@ -3,8 +3,10 @@ import { inject } from "@angular/core";
 import { UserService } from "./core/auth/services/user.service";
 import { map } from "rxjs/operators";
 import { ProfileComponent } from "./features/profile/pages/profile/profile.component";
+import { EmptyRouteComponent } from "./empty-route/empty-route.component";
 
 export const routes: Routes = [
+  { path: "**", component: EmptyRouteComponent },
   {
     path: "",
     loadComponent: () => import("./features/article/pages/home/home.component"),
